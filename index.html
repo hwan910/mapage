@@ -137,14 +137,26 @@
 
 
         }
+        #test {
+            font-size: 30px;
+        }
+        
     </style>
     <script>
-        let today = new Date();
-        let year = today.getFullYear();
-        let month = ('0' + (today.getMonth() + 1)).slice(-2);
-        let day = ('0' + today.getDate()).slice(-2);
-        let dateString = (`오늘은 ${year}년${month}월${day}일 입니다.`)
-        alert(dateString)
+        $(document).ready(function () {
+            let today = new Date();
+            let year = today.getFullYear();
+            let month = ('0' + (today.getMonth() + 1)).slice(-2);
+            let day = ('0' + today.getDate()).slice(-2);
+            let dateString = (`오늘은 ${year}년${month}월${day}일 입니다.`);
+
+            function q1(dateString) {
+                let temp_html = `<div> ${dateString} <div>`
+                $("#test").append(temp_html);
+            }
+            return q1(dateString); 
+        })
+
     </script>
 </head>
 
@@ -173,10 +185,12 @@
             <span> 저는 스타트업 플랫폼에서 1년간 서비스 기획자로 근무 하였습니다.
                 <br>그러다보니 개발팀과의 회의가 많았고 회의를 할 때마다 나 스스로 내가 기획한걸 개발해 보고 싶다는 생각이 들었습니다.
                 <br>내일배움캠프에서 잘 배워서 제가 상상한 것을 제 손으로 만들어 보고 싶습니다 !</span>
-        </section>
-     <h2><d-day></d-day></h2>
-    </div>
 
+        </section>
+        
+        <div id="test">
+        </div>
+    </div>
 
 
 </body>
